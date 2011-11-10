@@ -43,10 +43,16 @@ Ext.define('Todo.controller.Tasks', {
         }
     },
 
-    onListItemClick: function(list, record, el) {
-        record.set('checked', !record.get('checked'));
-        record.store.sync();
-        record.commit();
+    onListItemClick: function(list, record, el, index, event) {
+        var store = record.store;
+        if (Ext.fly(event.target).hasCls('delete')) {
+            store.remove(record);
+            store.sync();
+        } else {
+            record.set('checked', !record.get('checked'));
+            store.sync();
+            record.commit();
+        }
     },
 
     onClearButtonClick: function() {

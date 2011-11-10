@@ -67,6 +67,31 @@ input[type="text"] {
     text-decoration: line-through;
 }
 
+.row .delete {
+    width: 20px;
+    opacity: 0.3;
+    float: right;
+    height: 20px;
+    display: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 0.5em;
+    text-align: center;
+    line-height: 1.3em;
+    margin: 4px 3px 0 0;
+    padding: 1px 0 0 1px;
+    background-color: #000000;
+    border-radius: 16px 16px 16px 16px;
+}
+
+.row:hover .delete {
+    display: block;
+}
+
+.row .delete:hover {
+    opacity: .9;
+}
+
 .x-toolbar {
     color: #555555;
     margin-top: 10px;
